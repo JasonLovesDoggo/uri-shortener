@@ -3,9 +3,9 @@ from random import choice
 
 import redis.utils
 
-from utils.classes import *
-from utils.defualt import ValidateUrl
-from utils.errors import UrlNotFoundError, UrlInvalidError
+from .classes import Url
+from .defualt import ValidateUrl
+from .errors import UrlNotFoundError, UrlInvalidError
 
 
 class Shortener:
