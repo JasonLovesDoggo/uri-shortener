@@ -1,6 +1,5 @@
 import logging
 import os
-from os import environ
 from os.path import exists
 
 from dotenv import load_dotenv
