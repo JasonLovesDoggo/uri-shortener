@@ -1,3 +1,4 @@
+import time
 from logging import getLogger
 
 from flask import redirect
@@ -20,7 +21,6 @@ def get_url(path: str):
         return_value = 'https://' + return_value # todo improve this
     except UrlNotFoundError:
         return uri_not_found(path)
-
     return redirect(return_value)
 
 @app.route('/add/<url>', methods=['POST', 'GET', 'PUT'])
