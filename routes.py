@@ -10,8 +10,8 @@ log = getLogger(__name__)
 ILLIGAL_ROUTES = ['/add', '/', 'u.jasoncodes.ca']
 
 
-
 @app.route('/<path>', methods=['GET'])
+@app.route('/u/<path>', methods=['GET'])
 def get_url(path: str):
     try:
         return_value = str(app.short.get_uri(path).decode())  # no need to specify encoding as its utf-8 by default
@@ -19,6 +19,8 @@ def get_url(path: str):
     except UrlNotFoundError:
         return uri_not_found(path)
     return redirect(return_value)
+
+
 
 @app.route('/')
 def main():

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9206838-81c7-479f-99bb-fb29e28c88dc" name="Changes" comment="why">
+    <list default="true" id="f9206838-81c7-479f-99bb-fb29e28c88dc" name="Changes" comment="forgot that">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +37,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661285293729</updated>
-      <workItem from="1661285295944" duration="2526000" />
+      <workItem from="1661285295944" duration="2849000" />
     </task>
     <task id="LOCAL-00001" summary="little fix + debug test">
       <created>1661285427573</created>
@@ -95,7 +95,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661287448101</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="think it's finally fixed">
+      <created>1661287987364</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661287987364</updated>
+    </task>
+    <task id="LOCAL-00010" summary="forgot that">
+      <created>1661288073147</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1661288073147</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +133,9 @@
     <MESSAGE value="debug prints" />
     <MESSAGE value="debug prints fix" />
     <MESSAGE value="why" />
-    <option name="LAST_COMMIT_MESSAGE" value="why" />
+    <MESSAGE value="think it's finally fixed" />
+    <MESSAGE value="forgot that" />
+    <option name="LAST_COMMIT_MESSAGE" value="forgot that" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/uri_shortener_api$routes.coverage" NAME="routes Coverage Results" MODIFIED="1661286815352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
