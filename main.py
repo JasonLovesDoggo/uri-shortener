@@ -1,6 +1,5 @@
 import logging
 from sys import stdout, stdin, stderr
-from routes import * # keep under app declaration
 from utils.api import API
 
 logging.basicConfig(format="%(asctime)s - [%(name)s | %(filename)s:%(lineno)d] - %(levelname)s - %(message)s",
@@ -13,3 +12,4 @@ log.info('623')
 
 app = API(__name__)
 app.debug = False
+from routes import * # keep under app declaration
