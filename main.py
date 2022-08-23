@@ -9,7 +9,7 @@ log = logging.getLogger(__name__)
 log.addHandler(logging.StreamHandler(stdout))
 log.addHandler(logging.StreamHandler(stdin))
 log.addHandler(logging.StreamHandler(stderr))
-log.error('623')
+log.warning('623')
 
 app = API(__name__)
 app.debug = False

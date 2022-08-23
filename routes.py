@@ -27,16 +27,16 @@ def main():
 
 @app.route('/add/<url>', methods=['POST', 'GET', 'PUT'])
 def add_url(url: str):
-    log.error('1')
+    log.warning('1')
     if url in ILLIGAL_ROUTES:
-        log.error('2')
+        log.warning('2')
         return uri_invalid(url)
-    log.error('3')
+    log.warning('3')
     return_value = app.short.shorten(url)
-    log.error('4')
+    log.warning('4')
     if return_value is UrlInvalidError:
-        log.error('5')
+        log.warning('5')
         return uri_invalid(url)
-    log.error('6')
+    log.warning('6')
     return return_value.flaskify()
 
