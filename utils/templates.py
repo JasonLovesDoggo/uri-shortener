@@ -5,7 +5,7 @@ def uri_not_found(uri):
     return jsonify({
                "message": "URI not found",
                "uri": uri
-           }), 404
+           })
 
 def uri_invalid(uri):
     return jsonify({
