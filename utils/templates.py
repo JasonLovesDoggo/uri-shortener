@@ -9,6 +9,6 @@ def uri_not_found(uri):
 
 def uri_invalid(uri):
     return jsonify({
-               "message": "URI invalid. If you belive this is false please make a bug report here https://github.com/JasonLovesDoggo/uri-shortener/issues/new",
+               "message": "URI invalid. If you believe this is false please make a bug report here https://github.com/JasonLovesDoggo/uri-shortener/issues/new",
                "uri": uri
            }), 400
