@@ -11,7 +11,7 @@ log = getLogger(__name__)
 
 @app.route('/')
 def main():
-    return redirect('https://nasoj.me')
+    return redirect('https://jasoncodes.ca')
 
 
 @app.route('/u/<path>', methods=['GET'])

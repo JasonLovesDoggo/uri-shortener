@@ -27,5 +27,5 @@ class Url:
 
     @staticmethod
     def get_short_url_from_ID(id: ID) -> str:
-        base_url = f'https://u.nasoj.me/u/{id}'
+        base_url = f'https://u.jasoncodes.ca/u/{id}'
         return base_url
