@@ -25,18 +25,12 @@ def main():
     return redirect('https://jasoncodes.ca')
 
 
-@app.route('/add/<url>', methods=['POST', 'GET', 'PUT'])
-def add_url(url: str):
-    log.info('1')
+@app.route('/add/<path:url>', methods=['POST', 'GET', 'PUT'])
+def add_url(url):
     if url in ILLIGAL_ROUTES:
-        log.info('2')
         return uri_invalid(url)
-    log.info('3')
     return_value = app.short.shorten(url)
-    log.info('4')
     if return_value is UrlInvalidError:
-        log.info('5')
         return uri_invalid(url)
-    log.info('6')
     return return_value.flaskify()
 
