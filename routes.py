@@ -1,4 +1,3 @@
-import time
 from logging import getLogger
 
 from flask import redirect
@@ -11,12 +10,8 @@ log = getLogger(__name__)
 ILLIGAL_ROUTES = ['/add', '/u', '/', 'u.jasoncodes.ca']
 
 
-@app.route('/')
-def main():
-    return redirect('https://jasoncodes.ca')
 
-
-@app.route('/u/<path>', methods=['GET'])
+@app.route('/<path>', methods=['GET'])
 def get_url(path: str):
     try:
         return_value = str(app.short.get_uri(path).decode())  # no need to specify encoding as its utf-8 by default
@@ -25,18 +20,23 @@ def get_url(path: str):
         return uri_not_found(path)
     return redirect(return_value)
 
+@app.route('/')
+def main():
+    return redirect('https://jasoncodes.ca')
+
+
 @app.route('/add/<url>', methods=['POST', 'GET', 'PUT'])
-def add_url(url):
-    log.info('1')
+def add_url(url: str):
+    log.error('1')
     if url in ILLIGAL_ROUTES:
-        log.info('2')
+        log.error('2')
         return uri_invalid(url)
-    log.info('3')
+    log.error('3')
     return_value = app.short.shorten(url)
-    log.info('4')
+    log.error('4')
     if return_value is UrlInvalidError:
-        log.info('5')
+        log.error('5')
         return uri_invalid(url)
-    log.info('6')
+    log.error('6')
     return return_value.flaskify()
 
