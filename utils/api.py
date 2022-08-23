@@ -28,4 +28,4 @@ class API(Flask):
         logging.getLogger('werkzeug').addFilter(FaviconFilter())
         self.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
-        self.config["DEBUG"] = True
+        self.config["DEBUG"] = False

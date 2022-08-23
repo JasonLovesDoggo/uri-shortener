@@ -9,6 +9,7 @@ from utils.templates import uri_not_found, uri_invalid
 
 log = getLogger(__name__)
 
+
 @app.route('/')
 def main():
     return redirect('https://jasoncodes.ca')
