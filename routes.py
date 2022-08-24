@@ -21,7 +21,6 @@ def get_url(path: str):
     return redirect(return_value)
 
 
-
 @app.route('/')
 def main():
     return redirect('https://jasoncodes.ca')

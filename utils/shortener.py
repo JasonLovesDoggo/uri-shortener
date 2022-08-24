@@ -14,7 +14,6 @@ class Shortener:
 
     def generate_short_id(self, num_of_chars: int = 6) -> str:
         value = ''.join(choice(string.ascii_letters + string.digits) for _ in range(num_of_chars))
-        print(value)
         if not self.db.exists(
                 value):
             return value
