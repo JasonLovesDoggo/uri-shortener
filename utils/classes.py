@@ -25,7 +25,7 @@ class Url:
     def flaskify(self):
         return jsonify({
             'id': self.id,
-            'short_url': encoder.encode(self.short_url),
+            'short_url': self.short_url,
         }), 200
 
     @staticmethod
