@@ -15,7 +15,7 @@ ILLIGAL_ROUTES = ['/add', '/', 'u.jasoncodes.ca']
 def get_url(path: str):
     try:
         path = app.encoder.decode(path)
-        return_value = str(app.short.get_uri(path).decode())  # no need to specify encoding as its utf-8 by default
+        return_value = str(app.short.get_uri(path)).encode('utf-8')  # no need to specify encoding as its utf-8 by default
     except UrlNotFoundError:
         return uri_not_found(path)
     return redirect(return_value)
