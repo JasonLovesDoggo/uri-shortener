@@ -3,19 +3,19 @@ from logging import getLogger
 from flask import redirect
 
 from main import app
+from utils.ZeroWidth import ZeroWidthEncoder
 from utils.errors import UrlNotFoundError, UrlInvalidError
 from utils.templates import uri_not_found, uri_invalid
-
+app.encoder = ZeroWidthEncoder()
 log = getLogger(__name__)
 ILLIGAL_ROUTES = ['/add', '/', 'u.jasoncodes.ca']
-
 
 @app.route('/<path>', methods=['GET'])
 @app.route('/u/<path>', methods=['GET'])
 def get_url(path: str):
     try:
         return_value = str(app.short.get_uri(path).decode())  # no need to specify encoding as its utf-8 by default
-        return_value = return_value # todo improve this
+        return_value = app.encoder.encode(return_value)
     except UrlNotFoundError:
         return uri_not_found(path)
     return redirect(return_value)

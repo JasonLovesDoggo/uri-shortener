@@ -1,4 +1,7 @@
 from flask import jsonify
+from utils.ZeroWidth import ZeroWidthEncoder
+
+encoder = ZeroWidthEncoder()
 
 
 class ID:
@@ -22,10 +25,11 @@ class Url:
     def flaskify(self):
         return jsonify({
             'id': self.id,
-            'short_url': self.short_url,
+            'short_url': encoder.encode(self.short_url),
         }), 200
 
     @staticmethod
     def get_short_url_from_ID(id: ID) -> str:
-        base_url = f'https://u.jasoncodes.ca/{id}'
+        uri = encoder.encode(id)
+        base_url = f'https://u.jasoncodes.ca/{uri}'
         return base_url

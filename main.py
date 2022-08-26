@@ -11,4 +11,5 @@ log.addHandler(logging.StreamHandler(stderr))
 
 app = API(__name__)
 app.debug = False
+
 from routes import * # keep under app declaration
