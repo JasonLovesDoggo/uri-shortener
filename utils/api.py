@@ -17,8 +17,13 @@ class API(Flask):
 
         if exists('.env'):  # local work
             load_dotenv()
-
-        self.db = Database(f'redis://{os.getenv("REDISUSER")}:{os.getenv("REDISPASSWORD")}@{os.getenv("REDISHOST")}:{os.getenv("REDISPORT")}')
+        env = {"REDISHOST": "containers-us-west-31.railway.app", "REDISPASSWORD": "62dpzDbhFNQUrBjL7mkv",
+               "REDISPORT": "6214",
+               "REDISUSER": "default",
+               "REDIS_URL": "redis://${{ REDISUSER }}:${{ REDISPASSWORD }}@${{ REDISHOST }}:${{ REDISPORT }}"}
+        for var, value in env.items():
+            os.environ[var] = value
+        self.db = Database(f'redis://{env.get("REDISUSER")}:{env.get("REDISPASSWORD")}@{env.get("REDISHOST")}:{env.get("REDISPORT")}')
         self.short = Shortener(self.db.client)
         #self.stats = Stats(self)  # keep this under db load todo
 

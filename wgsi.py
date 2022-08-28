@@ -6,4 +6,3 @@ log = getLogger(__name__)
 if __name__ == '__main__':
     log.info('Initializing server')
     app.run()
-

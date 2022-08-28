@@ -28,7 +28,7 @@ class Shortener:
         return Url(url, uri_id)
 
     def get_uri(self, path: str) -> str:
-        u = self.db.get(path)
-        if u is None:
-            return UrlNotFoundError
-        return u
+        uri = self.db.get(path)
+        if uri is None:
+            raise UrlNotFoundError
+        return str(uri, 'utf-8')
