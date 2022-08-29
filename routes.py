@@ -1,13 +1,13 @@
 from logging import getLogger
 
-from flask import redirect
+from flask import redirect, request
 
 from main import app
 from utils.errors import UrlNotFoundError, UrlInvalidError
 from utils.templates import uri_not_found, uri_invalid
 
 log = getLogger(__name__)
-ILLIGAL_ROUTES = ['/add', '/']  # 'u.jasoncodes.ca']
+ILLIGAL_ROUTES = ['/add/', '/', '/add']  # 'u.jasoncodes.ca']
 
 
 #@app.route('/clear', methods=['GET'])
@@ -19,6 +19,7 @@ ILLIGAL_ROUTES = ['/add', '/']  # 'u.jasoncodes.ca']
 
 @app.route('/add/<path:url>', methods=['POST', 'GET', 'PUT'])
 def add_url(url):
+    #log.info(request.form)
     if url in ILLIGAL_ROUTES:
         return uri_invalid(url)
     return_value = app.short.shorten(url)

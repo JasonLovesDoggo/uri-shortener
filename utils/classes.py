@@ -1,7 +1,5 @@
 from flask import jsonify
 
-
-
 class ID:
     def __init__(self, id):
         self.id = id
